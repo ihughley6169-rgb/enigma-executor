@@ -1,0 +1,193 @@
+/* Final layout pass: loaded after the legacy styles so spacing stays predictable. */
+.hero-section,
+.device-gate {
+  min-width: 0;
+}
+
+.hero-section h1,
+.device-gate h1,
+.bottom-cta h2,
+.plans-content h1 {
+  line-height: 1.08;
+}
+
+.hero-copy,
+.gate-copy,
+.feature-card p,
+.release-note {
+  overflow-wrap: anywhere;
+}
+
+.product-hero {
+  gap: 0;
+}
+
+.product-hero .hero-logo {
+  display: block;
+}
+
+.feature-stack {
+  align-items: stretch;
+}
+
+.feature-card {
+  min-width: 0;
+}
+
+.feature-card h2 {
+  line-height: 1.2;
+}
+
+.feature-card p {
+  max-width: 48ch;
+}
+
+.bottom-cta h2 {
+  margin-bottom: 0;
+}
+
+.footer a {
+  padding: 10px;
+}
+
+@media (max-width: 699px) {
+  .app-header {
+    min-height: 64px;
+  }
+
+  .header-actions {
+    gap: 2px;
+  }
+
+  .header-text-link {
+    display: none;
+  }
+
+  .hero-section {
+    padding-top: 52px;
+    padding-bottom: 48px;
+  }
+
+  .hero-section .hero-logo {
+    width: 142px;
+    height: 142px;
+    margin-top: 34px;
+    margin-bottom: 24px;
+  }
+
+  .hero-section h1,
+  .device-gate h1 {
+    max-width: 100%;
+    font-size: clamp(31px, 9vw, 38px);
+    line-height: 1.08;
+  }
+
+  .hero-copy {
+    max-width: 31ch;
+    line-height: 1.65;
+  }
+
+  .get-started {
+    white-space: nowrap;
+  }
+
+  .device-gate {
+    padding-top: 58px;
+  }
+
+  .gate-logo {
+    width: 108px;
+    height: 108px;
+    margin-top: 34px;
+    margin-bottom: 25px;
+  }
+
+  .device-options {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .feature-stack {
+    padding-bottom: 42px;
+  }
+
+  .feature-card {
+    padding: 20px 18px 22px;
+  }
+
+  .bottom-cta {
+    padding-top: 42px;
+    padding-bottom: 56px;
+  }
+}
+
+@media (min-width: 700px) {
+  .hero-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "badge logo"
+      "title logo"
+      "copy logo"
+      "action logo";
+    align-items: center;
+    gap: 0 54px;
+    max-width: 900px;
+    padding: 96px 56px 84px;
+    text-align: left;
+  }
+
+  .hero-section .platform-badge {
+    grid-area: badge;
+    justify-self: start;
+  }
+
+  .hero-section .hero-logo {
+    grid-area: logo;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .hero-section h1 {
+    grid-area: title;
+    margin: 25px 0 0;
+    font-size: 48px;
+  }
+
+  .hero-section .hero-copy {
+    grid-area: copy;
+    max-width: 36ch;
+    margin-top: 15px;
+  }
+
+  .hero-section .get-started {
+    grid-area: action;
+    justify-self: start;
+    width: max-content;
+    margin-top: 24px;
+  }
+
+  .device-gate {
+    padding: 95px 40px 110px;
+  }
+
+  .device-gate h1 {
+    font-size: 46px;
+  }
+
+  .gate-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .device-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 640px;
+  }
+
+  .feature-stack {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
