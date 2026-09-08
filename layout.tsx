@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'Enigma — Free Roblox Executor',
   description:
     'Enigma is a free, undetectable Roblox executor. Fast injection, powerful scripts, continuously updated. Free forever.',
-  generator: 'v0.app',
+  generator: 'Enigma Labs',
 }
 
 export const viewport: Viewport = {
