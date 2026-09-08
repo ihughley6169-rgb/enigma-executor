@@ -3,10 +3,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { ArrowRight, Menu, MessageCircle, X } from 'lucide-react'
+import { ArrowRight, Menu, MessageCircle, Monitor, Settings, Smartphone, X } from 'lucide-react'
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [settingsOpen, setSettingsOpen] = useState(false)
+  const [platform, setPlatform] = useState<'Windows' | 'Mobile'>('Windows')
 
   return (
     <div className="site-frame">
@@ -17,18 +19,22 @@ export default function Page() {
             <span>Enigma</span>
           </Link>
           <div className="header-actions">
+            <button className="header-icon" onClick={() => setSettingsOpen(!settingsOpen)} aria-label="Open settings">
+              <Settings size={17} />
+            </button>
             <button className="header-icon menu-trigger" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>
               {menuOpen ? <X size={19} /> : <Menu size={20} />}
             </button>
             <a className="discord-link" href="#community" aria-label="Join the Enigma community"><MessageCircle size={18} /></a>
             <Link className="login-button" href="/plans">Login</Link>
           </div>
+          {settingsOpen && <div className="settings-panel"><div className="settings-title">Interface</div><div className="platform-options"><button className={platform === 'Windows' ? 'platform-option active' : 'platform-option'} onClick={() => setPlatform('Windows')}><Monitor size={16} /> Windows</button><button className={platform === 'Mobile' ? 'platform-option active' : 'platform-option'} onClick={() => setPlatform('Mobile')}><Smartphone size={16} /> Mobile</button></div></div>}
           {menuOpen && <nav className="app-menu"><Link href="/plans" onClick={() => setMenuOpen(false)}>Plans</Link><a href="#features" onClick={() => setMenuOpen(false)}>Features</a><a href="#community" onClick={() => setMenuOpen(false)}>Community</a></nav>}
         </header>
 
         <main>
           <section className="hero-section">
-            <div className="platform-badge"><span /> Free forever <b>·</b> Windows</div>
+            <div className="platform-badge"><span /> Free forever <b>·</b> {platform}</div>
             <div className="hero-logo"><Image src="/assets/enigma-logo.png" alt="Enigma lunar logo" width={155} height={155} priority /></div>
             <h1>Enigma</h1>
             <p className="hero-copy">The free, undetectable Roblox executor.<br />Powerful scripts, blazing-fast injection, and zero<br className="desktop-break" /> cost — ever.</p>
