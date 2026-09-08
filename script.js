@@ -13,6 +13,7 @@
   const clearEditor = document.querySelector('[data-clear-editor]')
   const output = document.querySelector('[data-output]')
   const outputState = document.querySelector('[data-output-state]')
+  const downloadButton = document.querySelector('[data-download]')
 
   clearEditor?.addEventListener('click', () => {
     if (editor instanceof HTMLTextAreaElement) editor.value = ''
@@ -25,5 +26,11 @@
     const lines = editor.value.split('\n').filter((line) => line.trim()).length
     if (output) output.textContent = `Local preview queued.\n${lines} non-empty line${lines === 1 ? '' : 's'} detected.\n\nRuntime integration is not connected yet.`
     if (outputState) outputState.textContent = 'Previewed'
+  })
+
+  downloadButton?.addEventListener('click', (event) => {
+    event.preventDefault()
+    const note = document.querySelector('.download-note')
+    if (note) note.textContent = 'The mobile build is in development. Workspace preview is available below.'
   })
 })()

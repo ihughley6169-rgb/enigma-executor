@@ -1,19 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080a0d"><link rel="icon" href="../assets/enigma-logo.png"><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../layout-fixes.css"><link rel="stylesheet" href="workspace.css"><title>Enigma Workspace</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a0d">
+  <meta name="description" content="Enigma mobile Lua workspace for educational and authorized development use.">
+  <link rel="icon" href="../assets/enigma-logo.png">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../layout-fixes.css">
+  <link rel="stylesheet" href="workspace.css">
+  <title>Enigma - Mobile Workspace</title>
 </head>
 <body>
   <div class="site-frame"><div class="mobile-page workspace-page">
-    <header class="app-header"><a href="../mobile/index.html" class="app-brand"><img src="../assets/enigma-logo.png" alt=""><span>Enigma</span></a><div class="header-actions"><span class="workspace-status"><i></i> Local workspace</span><a class="login-button" href="../index.html">Exit</a></div></header>
+    <header class="app-header"><a href="../mobile/index.html" class="app-brand"><img src="../assets/enigma-logo.png" alt=""><span>Enigma</span></a><div class="header-actions"><span class="workspace-status"><i></i> Mobile workspace</span><a class="login-button" href="../index.html">Exit</a></div></header>
     <main class="workspace-main">
-      <div class="workspace-heading"><div><p class="mini-label">ENIGMA / WORKSPACE</p><h1>Build something<br><em>worth running.</em></h1></div><span class="workspace-version">MOBILE ALPHA</span></div>
-      <section class="editor-card"><div class="editor-toolbar"><div class="editor-tabs"><button class="editor-tab active">untitled.lua</button><button class="editor-tab">+ New</button></div><button class="clear-button" data-clear-editor>Clear</button></div><label class="sr-only" for="script-editor">Workspace script editor</label><textarea id="script-editor" spellcheck="false">-- Enigma mobile workspace
--- Write and organize your authorized Roblox creator scripts here.
+      <section class="executor-hero">
+        <div class="executor-copy"><p class="mini-label">ENIGMA / MOBILE TOOL</p><h1>Enigma</h1><p class="executor-lede">A small, focused Lua workspace for developers and testers who want more from mobile tooling.</p><a class="download-cta" href="#download" data-download>Download Enigma <span>&darr;</span></a><p class="download-note">Mobile build coming soon <b>&middot;</b> Free to start</p></div>
+        <section class="lua-example" aria-label="Lua example"><div class="lua-topbar"><span class="lua-dot"></span><span>hello-world.lua</span><span class="lua-label">LUA</span></div><pre><code><span class="lua-comment">-- a tiny Enigma example</span>
+<span class="lua-keyword">local</span> message = <span class="lua-string">"Hello, world!"</span>
 
-print("Hello from Enigma")</textarea><div class="editor-footer"><span>Lua workspace</span><button class="run-button" data-run-preview>Run preview <span>&rarr;</span></button></div></section>
-      <section class="output-card"><div class="output-heading"><span>Output</span><span class="output-state" data-output-state>Ready</span></div><pre data-output>Preview output will appear here.</pre></section>
-      <p class="workspace-note">This is the first workspace layer. Runtime integration will be added only for authorized, legitimate development workflows.</p>
+<span class="lua-function">print</span>(message)</code></pre><div class="lua-result">Hello, world!</div></section>
+      </section>
+      <section class="notice-card" id="download"><p class="mini-label">IMPORTANT</p><h2>Built for learning.</h2><p>Enigma Team created this tool for developers and testers to study Lua patterns, prototype ideas, and test scripts in their own games or other authorized environments.</p><p>Enigma does not condone Roblox cheating, exploiting, unauthorized access, or interfering with other players or experiences. Use it responsibly and follow the rules of every platform you work with.</p></section>
+      <section class="preview-section"><div class="workspace-heading"><div><p class="mini-label">LOCAL PREVIEW</p><h2>Try the example.</h2></div><span class="workspace-version">MOBILE ALPHA</span></div><section class="editor-card"><div class="editor-toolbar"><div class="editor-tabs"><button class="editor-tab active">untitled.lua</button><button class="editor-tab">+ New</button></div><button class="clear-button" data-clear-editor>Clear</button></div><label class="sr-only" for="script-editor">Workspace script editor</label><textarea id="script-editor" spellcheck="false">-- Enigma mobile workspace
+-- Test authorized Lua examples here.
+
+print("Hello from Enigma")</textarea><div class="editor-footer"><span>Lua workspace</span><button class="run-button" data-run-preview>Run preview <span>&rarr;</span></button></div></section><section class="output-card"><div class="output-heading"><span>Output</span><span class="output-state" data-output-state>Ready</span></div><pre data-output>Preview output will appear here.</pre></section></section>
+      <section class="license-card"><p class="mini-label">LICENSE</p><h2>Enigma Community License</h2><p>Copyright 2026 Enigma Team. Permission is granted to use, study, and modify this project for educational and authorized development purposes. Redistribution must keep this notice and must not present Enigma as a tool for cheating, exploitation, or unauthorized access.</p><a href="../LICENSE" class="license-link">Read the full license <span>&rarr;</span></a></section>
     </main>
     <footer class="footer"><a href="../mobile/index.html">&larr; Mobile home</a></footer>
   </div></div>
