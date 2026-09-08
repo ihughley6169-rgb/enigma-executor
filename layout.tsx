@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   description:
     'Enigma is a free, undetectable Roblox executor. Fast injection, powerful scripts, continuously updated. Free forever.',
   generator: 'Enigma Labs',
+  applicationName: 'Enigma',
+  icons: {
+    icon: '/assets/enigma-logo.png',
+    apple: '/assets/enigma-logo.png',
+  },
+  manifest: '/manifest.json',
 }
 
 export const viewport: Viewport = {
