@@ -8,41 +8,22 @@
     })
   })
 
-  const settingsButton = document.querySelector('[data-settings]')
-  const settingsPanel = document.querySelector('[data-settings-panel]')
-  const menuButton = document.querySelector('[data-menu]')
-  const menuPanel = document.querySelector('[data-menu-panel]')
-  const label = document.querySelector('[data-platform-label]')
-  const platformButtons = document.querySelectorAll('[data-platform]')
+  const editor = document.querySelector('[data-editor]') || document.querySelector('#script-editor')
+  const runPreview = document.querySelector('[data-run-preview]')
+  const clearEditor = document.querySelector('[data-clear-editor]')
+  const output = document.querySelector('[data-output]')
+  const outputState = document.querySelector('[data-output-state]')
 
-  const closePanels = () => {
-    if (settingsPanel) settingsPanel.hidden = true
-    if (menuPanel) menuPanel.hidden = true
-  }
-
-  settingsButton?.addEventListener('click', () => {
-    if (!settingsPanel) return
-    settingsPanel.hidden = !settingsPanel.hidden
-    if (!settingsPanel.hidden && menuPanel) menuPanel.hidden = true
+  clearEditor?.addEventListener('click', () => {
+    if (editor instanceof HTMLTextAreaElement) editor.value = ''
+    if (output) output.textContent = 'Editor cleared. Ready for a new local preview.'
+    if (outputState) outputState.textContent = 'Ready'
   })
 
-  menuButton?.addEventListener('click', () => {
-    if (!menuPanel) return
-    menuPanel.hidden = !menuPanel.hidden
-    if (!menuPanel.hidden && settingsPanel) settingsPanel.hidden = true
-  })
-
-  platformButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const platform = button.dataset.platform || 'Windows'
-      if (label) label.textContent = platform
-      platformButtons.forEach((item) => item.classList.toggle('active', item === button))
-    })
-  })
-
-  document.addEventListener('click', (event) => {
-    const target = event.target
-    if (!(target instanceof Node)) return
-    if (!settingsPanel?.contains(target) && !settingsButton?.contains(target) && !menuPanel?.contains(target) && !menuButton?.contains(target)) closePanels()
+  runPreview?.addEventListener('click', () => {
+    if (!(editor instanceof HTMLTextAreaElement)) return
+    const lines = editor.value.split('\n').filter((line) => line.trim()).length
+    if (output) output.textContent = `Local preview queued.\n${lines} non-empty line${lines === 1 ? '' : 's'} detected.\n\nRuntime integration is not connected yet.`
+    if (outputState) outputState.textContent = 'Previewed'
   })
 })()
