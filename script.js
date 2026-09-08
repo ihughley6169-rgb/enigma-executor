@@ -1,4 +1,13 @@
 (() => {
+  const deviceLinks = document.querySelectorAll('[data-device]')
+
+  deviceLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const device = link.dataset.device
+      if (device) localStorage.setItem('enigma-device', device)
+    })
+  })
+
   const settingsButton = document.querySelector('[data-settings]')
   const settingsPanel = document.querySelector('[data-settings-panel]')
   const menuButton = document.querySelector('[data-menu]')

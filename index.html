@@ -4,29 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080a0d">
-  <meta name="description" content="Enigma is a free Roblox utility for creators.">
+  <meta name="description" content="Choose your Enigma platform.">
   <link rel="icon" href="assets/enigma-logo.png">
-  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
-  <title>Enigma - Free Roblox Utility</title>
+  <title>Choose your platform - Enigma</title>
 </head>
-<body>
-  <div class="site-frame"><div class="mobile-page">
+<body class="gate-body">
+  <div class="site-frame"><div class="mobile-page gate-page">
     <header class="app-header">
-      <a href="index.html" class="app-brand" aria-label="Enigma home"><img src="assets/enigma-logo.png" alt=""><span>Enigma</span></a>
-      <div class="header-actions">
-        <button class="header-icon" data-settings aria-label="Open settings"><span aria-hidden="true">&#9881;</span></button>
-        <button class="header-icon" data-menu aria-label="Open menu"><span aria-hidden="true">&#9776;</span></button>
-        <a class="discord-link" href="#community" aria-label="Join the Enigma community">&#9673;</a>
-        <a class="login-button" href="plans/index.html">Login</a>
-      </div>
-      <div class="settings-panel" data-settings-panel hidden><div class="settings-title">Interface</div><div class="platform-options"><button class="platform-option active" data-platform="Windows">&#9632; Windows</button><button class="platform-option" data-platform="Mobile">&#9643; Mobile</button></div></div>
-      <nav class="app-menu" data-menu-panel hidden><a href="plans/index.html">Plans</a><a href="#features">Features</a><a href="#community">Community</a></nav>
+      <a href="index.html" class="app-brand"><img src="assets/enigma-logo.png" alt=""><span>Enigma</span></a>
+      <div class="header-actions"><a class="discord-link" href="windows/index.html">&#9673;</a><a class="login-button" href="plans/index.html">Plans</a></div>
     </header>
-    <main>
-      <section class="hero-section"><div class="platform-badge"><span></span> Free forever <b>&middot;</b> <strong data-platform-label>Windows</strong></div><img class="hero-logo" src="assets/enigma-logo.png" alt="Enigma lunar logo"><h1>Enigma</h1><p class="hero-copy">The free, undetectable Roblox executor.<br>Powerful scripts, blazing-fast injection, and zero<br> cost - ever.</p><a class="get-started" href="#features">Get started <span aria-hidden="true">&rarr;</span></a></section>
-      <section class="feature-stack" id="features"><article class="feature-card"><h2>Optimized</h2><p>Enigma is engineered to run silky smooth even on low-end devices. Injection stays lightweight so your game performance never takes a hit.</p></article><article class="feature-card"><h2>Powerful</h2><p>Run your favorite scripts with a clean interface and fast, reliable execution built around the Roblox experience.</p></article><article class="feature-card"><h2>Always free</h2><p>No subscriptions, locked features, or confusing tiers. Enigma stays accessible to everyone.</p></article></section>
-      <section class="bottom-cta" id="community"><p class="mini-label">ENIGMA / 2026</p><h2>Ready when<br>you are.</h2><a class="get-started" href="plans/index.html">View plans <span aria-hidden="true">&rarr;</span></a></section>
+    <main class="device-gate">
+      <div class="platform-badge"><span></span> Free forever <b>&middot;</b> Choose your build</div>
+      <img class="gate-logo" src="assets/enigma-logo.png" alt="Enigma lunar logo">
+      <h1>Where are you<br><em>running Enigma?</em></h1>
+      <p class="gate-copy">Pick your platform to open the right Enigma experience.</p>
+      <div class="device-options">
+        <a class="device-option" href="windows/index.html" data-device="Windows"><span class="device-icon">&#9632;</span><span><strong>Windows</strong><small>Desktop build</small></span><b>&rarr;</b></a>
+        <a class="device-option" href="mobile/index.html" data-device="Mobile"><span class="device-icon">&#9643;</span><span><strong>Mobile</strong><small>Mobile build</small></span><b>&rarr;</b></a>
+      </div>
+      <p class="gate-note">You can change this later from Settings.</p>
     </main>
     <footer class="footer">Made for creators - Enigma</footer>
   </div></div>
